@@ -1,41 +1,34 @@
 import java.util.Scanner;
 
 public class solve {
-    public static void mein (String[] args ){
+    public  static  void main (String[]args){
         Scanner scanner= new Scanner(System.in);
-        // casteo y operadores en java
+        int menu ;
+        int opcion2;
+        System.out.println("Que quieres hacer \n" +
+                "1.Casteo\n2.Operadores de Asignacion\n3.Operadores de incremento\n" +
+                "4.Ejercicio combinados ");
 
-        //  ¿Cuál será el resultado de la siguiente operación?
-        int x = (int) 5.89 + (int) 3.45;
-        System.out.println(x);// 8
-
-        // Dado char c = 'A';, ¿cómo convertirías c a su valor ASCII como un int?
-        char c = 'a';
-        int n = (int) c ;
-        System.out.println(n);
-
-
-        // ¿Qué valor se imprimirá?
-        double d = 100.04;
-        long l = (long)d;
-        int i = (int)l;
-        System.out.println(i);// 100
-    }
-    //¿Cuál es el resultado de (int) (char) (byte) -1?
-    int n = (int)(char)(byte)-1;
-        System.out.println(n);
-
-
-    public static void ConvertirString() {
-        System.out.println("Ingrese el  string que quiere convertir en entero: ");
-        Scanner scanner = new Scanner(System.in);
-        char num = scanner.next().charAt(0);
-        int valorNumerico = (int) num;
-
-        System.out.println("El resultado de la conversión es: " + valorNumerico);
-    }
-
-    public static void main(String[] args) {
-        ConvertirString();
+        int opcion = scanner.nextInt();
+        switch (opcion){
+            case 1 :
+                System.out.println("Que quieres hacer \n" +
+                        "1.¿Cuál será el resultado de la siguiente operación?" +
+                        "\n2.Dado char c = 'A';, ¿cómo convertirías c a su valor ASCII como un int?" +
+                        "\n3.¿Qué valor se imprimirá?\ndouble d = 100.04;\n" +
+                        "long l = (long)d;\n" +
+                        "int i = (int)l;\n" +
+                        "System.out.println(i);\n" +
+                        "4.scribe código para convertir un String que contiene un número a un int.\n" +
+                        "5.¿Cuál es el resultado de (int) (char) (byte) -1?\n" +
+                        "6.Convierte el número 65 a un char. ¿Qué carácter obtienes?\n" +
+                        "7.¿Qué sucede si intentas asignar un long a un int sin casteo explícito?\n" +
+                        "8.Escribe código para convertir un float a un String.\n" +
+                        "9.¿Cuál es el resultado de (int) Math.round(3.7)?\n" +
+                        "10.Dado byte b = 50;, ¿cómo lo convertirías a short?\n");
+                opcion2 = scanner.nextInt();
+                break;
+            default:
+        }
     }
 }
