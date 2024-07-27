@@ -6,30 +6,12 @@ public class solve {
         int opcion = 0;
         int opcion2;
         while (opcion != 5) {
-            System.out.println("¿Qué quieres hacer? \n" +
-                    "1. Casteo\n" +
-                    "2. Operadores de Asignación\n" +
-                    "3. Operadores de incremento\n" +
-                    "4. Ejercicio combinados \n" +
-                    "5. Salir");
+                        menus.menuPrincipal();
             opcion = scanner.nextInt();
 
             switch (opcion) {
                 case 1:
-                    System.out.println("¿Qué quieres hacer? \n" +
-                            "1. ¿Cuál será el resultado de la siguiente operación?\n" +
-                            "2. Dado char c = 'A';, ¿cómo convertirías c a su valor ASCII como un int?\n" +
-                            "3. ¿Qué valor se imprimirá?\ndouble d = 100.04;\n" +
-                            "long l = (long)d;\n" +
-                            "int i = (int)l;\n" +
-                            "System.out.println(i);\n" +
-                            "4. Escribe código para convertir un String que contiene un número a un int.\n" +
-                            "5. ¿Cuál es el resultado de (int) (char) (byte) -1?\n" +
-                            "6. Convierte el número 65 a un char. ¿Qué carácter obtienes?\n" +
-                            "7. ¿Qué sucede si intentas asignar un long a un int sin casteo explícito?\n" +
-                            "8. Escribe código para convertir un float a un String.\n" +
-                            "9. ¿Cuál es el resultado de (int) Math.round(3.7)?\n" +
-                            "10. Dado byte b = 50;, ¿cómo lo convertirías a short?\n");
+                    menus.men1();
                      opcion2 = scanner.nextInt();
                     switch (opcion2) {
                         case 1:
@@ -89,14 +71,7 @@ public class solve {
                     }
                     break;
                 case 2 :
-                    System.out.print("1.¿Cuál es el valor de x después de la siguiente operación?\n" +
-                            "int x = 10; x += 5;\n" +
-                            "2.Simplifica la siguiente expresión usando un operador de asignación compuesta:\n" +
-                            "y = y * (x + 5);\n" +
-                            "3.¿Cuál es el valor de a después de estas operaciones?\n" +
-                            "int a = 15; a %= 4;\n" +
-                            "4.Escribe una expresión equivalente a x = x + y usando un operador de asignación compuesta.\n" +
-                            "5.¿Qué hace la siguiente operación? x ^= 2;");
+                   menus.men2();
 
                     opcion2 = scanner.nextInt();
                     switch (opcion2){
@@ -122,20 +97,107 @@ public class solve {
                             break;
                     }
                 case 3:
-                        System.out.print("1. ¿Cuál es el valor de `x` e `y` después de estas operaciones?\n" +
-                                "`int x = 5; int y = ++x;`\n" +
-                                "2. ¿Qué se imprimirá en la consola?\n" +
-                                "`int a = 5; System.out.println(a++); System.out.println(a);`\n" +
-                                "3. Escribe código que use el operador de decremento para disminuir una variable `count` en 1.\n" +
-                                "4. ¿Cuál es la diferencia entre `++i` y `i++`?\n" +
-                                "5. ¿Qué valor tendrá `x` después de esta operación?\n" +
-                                "`int x = 3; x = x++;`" );
+                        menus.men3();
                     opcion2 = scanner.nextInt();
                         switch (opcion2){
                             case 1 :
+                                int x = 5; int y = ++x;
+                                System.out.println("el resultado de y es : "+y+" y el resultado de x es :"+ x +"\n"+"\n");
+                                break;
+                            case 2 :
+                                int a = 5; System.out.println(a++);
+                                System.out.println("imprime :"+a+"\n"+"\n");
+                                break;
+                            case 3 :
+                                int count = 2;
+                                count -= 1 ;
+                                System.out.println("el resultado es :"+count);
+                                break;
+                            case 4 :
+                                System.out.println("\n\n int result = i++;  Primero asigna el valor de i a result, luego incrementa \n" +
+                                        " int result = ++i;  Primero incrementa i, luego asigna el valor a result\n\n");
+                                break;
+                            case 5:
+                                int p = 3; p = p++;
+                                System.out.println("el resultado de x es : "+p+"\n\n");
                                 break;
                         }
+                        break;
+                case 4 :
+                   menus.men4();
+                    opcion2 = scanner.nextInt();
+                    switch (opcion2){
+                        case 1 :
+                            int i = 5;
+                            i += ++i + i++ + ++i;
+                            System.out.println("el resultado es : "+ i+"\n\n");
+                            break;
+                        case 2 :
+                            double d = 7.5;
+                            int o = (int) d;
+                            o++;
+                            System.out.println("el resultado de la operacion: double d = 7.5;\n" +
+                                    "                            int o = (int) d;  \n" +
+                                    "                            o++; \n es :"+o+"\n\n");
+                            break;
+                        case 3 :
+                            double l = 5.7;
+                            int c = (int)l;
+                            c *= 2;
+                            System.out.println("imprime :\n");
+                            System.out.println(c--);
+                            break;
+                        case 4 :
+                            int num = 7;
+                            double result = (double) num / 2;
+                            result /= 2;
+                            System.out.println("el resultado de la operacion: int num = 7;\n" +
+                                    "                            double result = (double) num / 2;\n" +
+                                    "                            \n es :  "+ result+"\n\n");
+                            break;
+                        case 5:
+                            char cc = 'X';
+                            cc += 32;
+                            System.out.println("el resultado es :"+cc+"\n\n");
+                            break;
+                        case 6:
+                            long g = 1000L;
+                            short s = (short) g;
+                            s *= 3;
+                            System.out.println("el resultado de la operacion :\n long g = 1000L;\n" +
+                                    "                            short s = (short) g;\n" +
+                                    "                            s *= 3; \n es : "+s+"\n\n");
+                            break;
 
+                        case 7 :
+                            int x = 10;
+                            x += (x++) + (++x);
+                            System.out.println("el valor de x es de : "+x+"\n\n");
+                            break;
+                        case 8 :
+                            float f = 10.9f;
+                            byte b = (byte) f;
+                            --b;
+                            System.out.println("el resultado de la operacion : \n float f = 10.9f;\n" +
+                                    "                            byte b = (byte) f;\n" +
+                                    "                            --b;    \n es : "+ b +"\n\n");
+                            break;
+                        case 9 :
+                            int y = 257;
+                            byte q = (byte)y;
+                            System.out.println("el resultado de la operacion es :"+q+"\n\n");
+                            break;
+                        case 10 :
+                            double n = 7.5;
+                            int h = (int) n;
+                            h += 5;
+                            h++;
+                            System.out.println("el resultado de la operacion:\ndouble n = 7.5;\n" +
+                                    "                            int h = (int) n;  \n" +
+                                    "                            h += 5;          \n" +
+                                    "                            h++;\n es :  "+h +"\n\n");
+                            break;
+                    }
                     break;
                 default:
                     System.out.println("Opción no válida o funcionalidad aún no implementada.\n"+"\n");
